@@ -1,0 +1,54 @@
+h1,
+h2,
+h3 {
+  margin-bottom: 1rem;
+}
+
+.oswald {
+  font-family: Oswald;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+h3 + hr {
+  border-color: $primary;
+  border-top-width: 2px;
+  margin-top: 0px;
+  width: 60px;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+
+  &.text-center {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+}
+
+header {
+  h1 {
+    font-size: 3.5rem;
+    & + hr {
+      border-color: $primary;
+      border-top-width: 2px;
+      margin-top: 0px;
+      width: 60px;
+    }
+  }
+
+  h1,
+  h5 {
+    font-weight: 200;
+  }
+  h5 {
+    line-height: 1.4;
+    margin: 0 auto;
+    @include media-breakpoint-up(sm) {
+      width: 70%;
+    }
+  }
+}
+
+h6 {
+  font-weight: 400;
+}

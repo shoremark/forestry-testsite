@@ -10,13 +10,38 @@ module.exports = {
     about: config.about,
     contact: config.contact,
     primaryColor: config.primary_color,
-    infoData: infoData
+    infoData: infoData,
   },
   plugins: [
     "gatsby-plugin-sass",
     "gatsby-transformer-remark",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-yaml",
+    "gatsby-plugin-root-import",
+    {
+      resolve: "gatsby-plugin-hubspot",
+      options: {
+        trackingCode: "2265361",
+        respectDNT: true,
+        productionOnly: true,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /\.svg$/,
+        },
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/templates/page.js"),
+        },
+      },
+    },
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -28,9 +53,17 @@ module.exports = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`
-      }
+        path: `${__dirname}/content/posts`,
+      },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/content/pages/`,
+      },
+    },
+
     {
       resolve: "gatsby-source-filesystem",
       options: {
@@ -46,10 +79,10 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-sharp", 
+      resolve: "gatsby-plugin-sharp",
       options: {
-        defaultQuality: 75
-      }
+        defaultQuality: 75,
+      },
     },
     `gatsby-transformer-sharp`,
     {

@@ -1,0 +1,44 @@
+// Some custom colors
+$dark-background: #111;
+$dark_background_rgb: 34, 37, 50;
+
+$twitter: #55acee;
+$facebook: #3b5998;
+$email: #585858;
+$pinterest: #bd081c;
+$instagram: #3f729b;
+
+/* Color system */
+$gray-100: #fafafa;
+$gray-200: #e6e6e6;
+$gray-300: #c1bebc;
+$gray-400: #bebebe;
+$gray-500: #a6a8ad;
+$gray-600: #777;
+$gray-700: #313535;
+$gray-800: #2a2d33;
+$gray-900: #1a1a1a;
+$black: #111;
+
+$red: #b00d23;
+$green: #007f00;
+
+$primary: #fe3b1f;
+$secondary: #6e8487;
+$light_green: #abe0e0;
+$light: #fafafa;
+$dark: $gray-800;
+$dark_orange: #c95e13;
+
+$theme-colors: (
+  'primary': $primary,
+  'secondary': $secondary,
+  'light': $light,
+  'info': $gray-700
+);
+
+// Events HTML variables
+
+$bg_color_full_height_content: $gray-900;
+$form-container-bg-color: $gray-700;
+$form-container-padding: 1.5rem;

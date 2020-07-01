@@ -1,0 +1,101 @@
+.contact-image {
+  clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+$arrow_width: 14px;
+.contact-info {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  background-color: #fff;
+  width: 250px;
+  padding: 1rem;
+  border-radius: $btn-border-radius;
+  &:before {
+    content: '';
+    position: absolute;
+    left: $arrow_width * 1.6;
+    bottom: -$arrow_width;
+    width: 0;
+    height: 0;
+    border-right: ($arrow_width / 1.5) solid transparent;
+    border-top: $arrow_width solid #fff;
+    border-left: ($arrow_width / 1.5) solid transparent;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+}
+
+.form-container {
+  padding: 1rem;
+  position: relative;
+  top: 15px;
+  z-index: 1;
+  width: 100%;
+
+  form {
+    width: 90%;
+    .button-container {
+      right: -15px;
+      position: relative;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    top: -75px;
+    padding: 3rem;
+    width: 90%;
+    form {
+      .button-container {
+        right: -125px;
+      }
+    }
+  }
+}
+
+.form-control {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom: 2px solid #ddd;
+  &:focus {
+    background-color: transparent;
+    color: #ddd;
+    border-bottom-color: #ddd;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    box-shadow: none;
+  }
+  &::placeholder {
+    vertical-align: bottom;
+  }
+}
+
+input:invalid,
+input:-moz-ui-invalid {
+  border: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.contact-shape {
+  background-color: $black;
+  clip-path: polygon(0% 0px, 90% 0px, 100% 100%, 0% 100%);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -111;
+}
+
+.contact-image-container {
+  width: 100%;
+  margin-left: auto;
+
+  @include media-breakpoint-up(md) {
+    width: 80%;
+  }
+}
